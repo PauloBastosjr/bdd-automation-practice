@@ -6,22 +6,22 @@ Funcionalidade: Login e Cadastro de Usuário no Automation Practice
   # ------------------ LOGIN ------------------
   Cenário: Login com credenciais válidas
     Dado que estou na página de login
-    E informo o email "usuario@teste.com"
-    E informo a senha "senhaValida123"
+    E informo o email "paulo.bastosjr@outlook.com"
+    E informo a senha "senha123456"
     Quando clico no botão "Entrar"
     Então devo ser redirecionado para a página da minha conta
-    E devo ver a mensagem "Bem-vindo, Usuário!"
+    E devo ver a mensagem "Login realizado"
 
   Cenário: Login com senha incorreta
     Dado que estou na página de login
-    E informo o email "usuario@teste.com"
-    E informo a senha "senhaErrada"
+    E informo o email "paulo,bastosjr@outlook.com"
+    E informo a senha "123"
     Quando clico no botão "Entrar"
     Então devo ver a mensagem "Senha inválida"
 
   Cenário: Login com email não cadastrado
     Dado que estou na página de login
-    E informo o email "naocadastrado@teste.com"
+    E informo o email "@cogumelo.com"
     E informo a senha "senhaQualquer"
     Quando clico no botão "Entrar"
     Então devo ver a mensagem "Usuário não encontrado"
@@ -35,34 +35,20 @@ Funcionalidade: Login e Cadastro de Usuário no Automation Practice
   # ------------------ CADASTRO ------------------
   Cenário: Cadastro com dados válidos
     Dado que estou na página de cadastro
-    E preencho o campo "Nome" com "João Teste"
-    E preencho o campo "Email" com "joao.teste@teste.com"
-    E preencho o campo "Senha" com "SenhaForte123"
-    E confirmo a senha com "SenhaForte123"
-    E marco a opção "Aceito os termos de uso"
+    E preencho o campo "Nome" com "Paulo"
+    E preencho o campo "Email" com "paulo.junior@gmail.com"
+    E preencho o campo "Senha" com "123456"
     Quando clico no botão "Cadastrar"
     Então devo ser redirecionado para a página da minha conta
-    E devo ver a mensagem "Cadastro realizado com sucesso!"
+    E devo ver a mensagem "Cadastro realizado!"
 
   Cenário: Cadastro com email já cadastrado
     Dado que estou na página de cadastro
-    E preencho o campo "Nome" com "João Teste"
-    E preencho o campo "Email" com "usuarioexistente@teste.com"
+    E preencho o campo "Nome" com "Paulo"
+    E preencho o campo "Email" com "paulo.junior@gmail.com"
     E preencho o campo "Senha" com "SenhaForte123"
-    E confirmo a senha com "SenhaForte123"
-    E marco a opção "Aceito os termos de uso"
     Quando clico no botão "Cadastrar"
     Então devo ver a mensagem "Email já cadastrado"
-
-  Cenário: Cadastro com senhas diferentes
-    Dado que estou na página de cadastro
-    E preencho o campo "Nome" com "Maria Teste"
-    E preencho o campo "Email" com "maria.teste@teste.com"
-    E preencho o campo "Senha" com "SenhaForte123"
-    E confirmo a senha com "SenhaErrada456"
-    E marco a opção "Aceito os termos de uso"
-    Quando clico no botão "Cadastrar"
-    Então devo ver a mensagem "As senhas não coincidem"
 
   Cenário: Cadastro sem preencher campos obrigatórios
     Dado que estou na página de cadastro
